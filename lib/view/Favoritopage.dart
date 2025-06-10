@@ -25,7 +25,19 @@ class _FavoritopageState extends State<Favoritopage> {
               : ListView.separated(
                   itemBuilder: (BuildContext context, int elemento) {
                     return ListTile(
-                      title: Text(controlador.favoritos[elemento]),
+                      title: Text(
+                        controlador.favoritos[elemento],
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      trailing: IconButton(
+                        onPressed: () {
+                          controlador.removerFavorito(elemento);
+                        },
+                        icon: Icon(Icons.delete),
+                      ),
                     );
                   },
                   separatorBuilder: (_, __) => Divider(),

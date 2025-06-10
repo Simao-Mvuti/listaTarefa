@@ -32,8 +32,8 @@ class Controller extends ChangeNotifier {
     notifyListeners();
   }
 
-  void removerFavorito(String tarefa) {
-    favoritos.remove(tarefa);
+  void removerFavorito(int tarefa) {
+    favoritos.removeAt(tarefa);
     _salvarDados();
     notifyListeners();
   }

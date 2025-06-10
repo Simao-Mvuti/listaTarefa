@@ -49,7 +49,11 @@ class _ListapageState extends State<Listapage> {
       ),
       body: Stack(
         children: [
-          Image.asset('images/imagem.png'),
+          Positioned.fill(
+            child: Expanded(
+              child: Image.asset('images/imagen.jpg', fit: BoxFit.cover),
+            ),
+          ),
           Consumer<Controller>(
             builder: (context, controlador, child) {
               return ListView.separated(
@@ -69,6 +73,8 @@ class _ListapageState extends State<Listapage> {
                     title: Text(
                       controlador.lista[elemento],
                       style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
                         color: selecionado ? Colors.green : Colors.black,
                       ),
                     ),
